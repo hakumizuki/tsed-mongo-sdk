@@ -1,9 +1,9 @@
-import {Controller, Get} from "@tsed/common";
+import {Controller, Get} from '@tsed/common';
 
-@Controller("/hello-world")
+@Controller('/hello-world')
 export class HelloWorldController {
-  @Get("/")
+  @Get('/')
   get() {
-    return "hello";
+    return 'hello';
   }
 }

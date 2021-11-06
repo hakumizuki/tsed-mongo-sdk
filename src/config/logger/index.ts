@@ -1,20 +1,20 @@
-import {PlatformLoggerSettings, $log} from "@tsed/common";
-import {isProduction} from "../env";
+import {PlatformLoggerSettings, $log} from '@tsed/common';
+import {isProduction} from '../env';
 
 if (isProduction) {
-  $log.appenders.set("stdout", {
-    type: "stdout",
-    levels: ["info", "debug"],
+  $log.appenders.set('stdout', {
+    type: 'stdout',
+    levels: ['info', 'debug'],
     layout: {
-      type: "json"
+      type: 'json'
     }
   });
 
-  $log.appenders.set("stderr", {
-    levels: ["trace", "fatal", "error", "warn"],
-    type: "stderr",
+  $log.appenders.set('stderr', {
+    levels: ['trace', 'fatal', 'error', 'warn'],
+    type: 'stderr',
     layout: {
-      type: "json"
+      type: 'json'
     }
   });
 }
