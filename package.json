@@ -1,7 +1,7 @@
 {
   "name": "tsed-mongo-sdk",
   "version": "1.0.0",
-  "description": "",
+  "description": "Experimental project for Ts.ED x MongoDB backend dev environment.",
   "scripts": {
     "build": "yarn run tsc",
     "tsc": "tsc --project tsconfig.compile.json",
