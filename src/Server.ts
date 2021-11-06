@@ -4,6 +4,7 @@ import '@tsed/platform-express'; // /!\ keep this import
 import bodyParser from 'body-parser';
 import compress from 'compression';
 import cookieParser from 'cookie-parser';
+import helmet from 'helmet';
 import methodOverride from 'method-override';
 import cors from 'cors';
 import '@tsed/ajv';
@@ -11,6 +12,26 @@ import '@tsed/swagger';
 import '@tsed/mongoose';
 import { config, rootDir } from './config';
 import { IndexCtrl } from './controllers/pages/IndexController';
+import { isProduction } from './config/env';
+
+const helmetOptions = isProduction ? {
+  contentSecurityPolicy: false,
+  expectCt: false,
+  referrerPolicy: false,
+  permittedCrossDomainPolicies: false,
+} : {
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ['\'self\''],
+      styleSrc: ['\'self\'', '\'unsafe-inline\''],
+      imgSrc: ['\'self\'', 'data:', 'https:'],
+      scriptSrc: ['\'self\'', 'https: \'unsafe-inline\''],
+    },
+  },
+  expectCt: false,
+  referrerPolicy: false,
+  permittedCrossDomainPolicies: false,
+};
 
 @Configuration({
   ...config,
@@ -25,6 +46,9 @@ import { IndexCtrl } from './controllers/pages/IndexController';
       IndexCtrl
     ]
   },
+  middlewares: [
+    helmet(helmetOptions),
+  ],
   swagger: [
     {
       path: '/_docs',
