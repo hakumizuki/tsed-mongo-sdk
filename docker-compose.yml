@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
   server:
     build:
@@ -10,10 +10,11 @@ services:
         - no_proxy
     image: tsed-mongo-sdk/server:latest
     ports:
-      - '8081:8081'
+      - "8000:8000"
     stdin_open: true
     tty: true
+
   mongodb:
-    image: mongo:4.1
+    image: mongo:4.4
     ports:
-      - '27017:27017'
+      - "27017:27017"
