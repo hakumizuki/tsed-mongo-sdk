@@ -1,8 +1,8 @@
-import {join} from 'path';
-import {loggerConfig} from './logger';
+import { join } from 'path';
+import { loggerConfig } from './logger';
 import { isProduction } from './env';
 
-const {version} = require('../../package.json');
+const { version } = require('../../package.json');
 
 export const rootDir = join(__dirname, '..');
 

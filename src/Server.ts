@@ -1,5 +1,5 @@
-import {Configuration, Inject} from '@tsed/di';
-import {PlatformApplication} from '@tsed/common';
+import { Configuration, Inject } from '@tsed/di';
+import { PlatformApplication } from '@tsed/common';
 import '@tsed/platform-express'; // /!\ keep this import
 import bodyParser from 'body-parser';
 import compress from 'compression';
@@ -9,8 +9,8 @@ import cors from 'cors';
 import '@tsed/ajv';
 import '@tsed/swagger';
 import '@tsed/mongoose';
-import {config, rootDir} from './config';
-import {IndexCtrl} from './controllers/pages/IndexController';
+import { config, rootDir } from './config';
+import { IndexCtrl } from './controllers/pages/IndexController';
 
 @Configuration({
   ...config,
@@ -27,7 +27,7 @@ import {IndexCtrl} from './controllers/pages/IndexController';
   },
   swagger: [
     {
-      path: '/v3/docs',
+      path: '/_docs',
       specVersion: '3.0.1'
     }
   ],
