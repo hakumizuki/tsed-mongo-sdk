@@ -16,7 +16,7 @@ import {IndexCtrl} from "./controllers/pages/IndexController";
 @Configuration({
   ...config,
   acceptMimes: ["application/json"],
-  httpPort: process.env.PORT || 8083,
+  httpPort: process.env.PORT || 8000,
   httpsPort: false, // CHANGE
   mount: {
     "/rest": [
