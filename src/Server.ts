@@ -14,6 +14,9 @@ import { config, rootDir } from './config';
 import { IndexCtrl } from './controllers/pages/IndexController';
 import { isProduction } from './config/env';
 
+/*
+ * Read: https://www.npmjs.com/package/helmet
+ */
 const helmetOptions = isProduction ? {
   contentSecurityPolicy: false,
   expectCt: false,
