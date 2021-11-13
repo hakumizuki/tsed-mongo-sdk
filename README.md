@@ -9,14 +9,14 @@ See [Ts.ED](https://tsed.io) project for more information.
 
 > **Important!** Ts.ED requires Node >= 10, Express >= 4 and TypeScript >= 3.
 
-```batch
-# install dependencies
+```terminal
+// install dependencies
 $ yarn install
 
-# start server
+// start server
 $ yarn start
 
-# build for production
+// build for production
 $ yarn build
 $ yarn start:prod
 ```
