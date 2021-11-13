@@ -43,7 +43,7 @@ const helmetOptions = isProduction ? {
   httpsPort: false, // CHANGE
   mount: {
     '/_api/v1': [
-      `${rootDir}/controllers/**/*.ts`
+      `${rootDir}/controllers/api/**/*.ts`
     ],
     '/': [
       IndexCtrl
